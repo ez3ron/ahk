@@ -34,3 +34,4 @@ deletesomething(){
     Sleep, 60
     Send, {Enter}
 }
+
