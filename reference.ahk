@@ -1,4 +1,4 @@
-;Simple ahk to sort reference files in File Comander
+﻿;Simple ahk to sort reference files in File Comander
 
 CoordMode, Mouse, Screen
 
@@ -7,17 +7,21 @@ F1::startup()
 F2::closevlc()
 F3::startlisten()
 F4::endit()
+^F2::
+Send, {F2}
+return
 
 ;Keys zum Verschieben in Orte
-^Numpad1::movinter(555, 184)
-^Numpad2::movinter(555, 201)
-^Numpad3::movinter(555, 219)
-^Numpad4::movinter(555, 234)
-^Numpad5::movinter(555, 249)
-^Numpad6::movinter(555, 271)
-^Numpad7::movinter(555, 288)
-^Numpad8::movinter(555, 300)
-^Numpad9::movinter(555, 318)
+^Numpad1::movinter(555, 192)
+^Numpad2::movinter(555, 209)
+^Numpad3::movinter(555, 226)
+^Numpad4::movinter(555, 241)
+^Numpad5::movinter(555, 261)
+^Numpad6::movinter(555, 276)
+^Numpad7::movinter(555, 294)
+^Numpad8::movinter(555, 310)
+^Numpad9::movinter(555, 329)
+;Verbesserungen Der Koordinaten für Linke Bildhälfte
 
 ^Numpad0::deletesomething()
 
@@ -25,6 +29,7 @@ F4::endit()
 ;startet oder wechselt zum file comader
 startup()
 {
+    MouseGetPos, X1, Y1
     IfWinExist, [Reference]
     {
         WinActivate,
@@ -36,6 +41,7 @@ startup()
         ;WinMaximize, [Reference]
     }
     MouseClickDrag, L, 990, 13, 0, 321, 4
+    MouseMove, X1, Y1
     Return
 }
 
@@ -69,7 +75,7 @@ closevlc()
     IfWinExist, ahk_exe vlc.exe
     {
         WinClose
-        startup()
+        WinActivate, ahk_exe FreeCommander.exe
     }
     Sleep, 120
     MouseMove, catx1, caty1, 10
@@ -80,7 +86,6 @@ startlisten()
 {
     MouseGetPos, catx1, caty1
     Click, 2, catx1, caty1
-    Return, catx1, caty1
     Sleep, 60   
     IfWinExist, ahk_exe vlc.exe
     {

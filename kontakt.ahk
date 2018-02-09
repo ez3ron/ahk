@@ -2,10 +2,11 @@
 CoordMode, Mouse, Screen
 SetControlDelay, 1
 
+
+F1::fun_endlod()
+F2::fun_dragandD()
 F3::fun_opvolQ()
 F4::fun_chngwnd()
-F2::fun_dragandD()
-F1::fun_endlod()
 F6::fun_strt()
 
 ;Funktion1
