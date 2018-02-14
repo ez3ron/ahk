@@ -68,3 +68,10 @@ IfWinExist, ahk_exe cmd.exe
 Return
 ;F4 Works Fine!
 
+;Super Googlefunktion!!!
+#g::
+clipboard = 
+SendInput {CTRLDOWN}c{CTRLUP}
+ClipWait
+Run http://www.google.com/search?hl=en&q=%clipboard%,, UseErrorLevel
+Return

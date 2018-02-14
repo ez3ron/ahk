@@ -4,13 +4,15 @@ SetControlDelay, 60
 
 
 F1::schritt1()
-F2::schritt2()
-F3::schritt3()
+F3::schritt2()
+F4::schritt3()
 ;F4::schritt4()
 ;F6::schritt5()
 
+;Kontakt Aktiviren
 schritt1()
 {
+    ;Aktivire Kontakt, Click Library Fensterabhängig
     IfWinActive, ahk_exe Kontakt 5.exe
     {
     CoordMode, Mouse, Relative
@@ -26,6 +28,7 @@ schritt1()
     }
 }
 
+;Explorer an richtiger Stelle
 schritt2()
 {
 IfWinExist, Q:\[Kontakt Q] 
@@ -41,6 +44,7 @@ IfWinExist, Q:\[Kontakt Q]
     }
 }
 
+;Verschieben in Lost Ordner !!Unfertig!!
 schritt3()
 {
     MouseGetPos, X1, Y1
