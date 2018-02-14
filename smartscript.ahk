@@ -69,7 +69,7 @@ Return
 ;F4 Works Fine!
 
 ;Super Googlefunktion!!!
-#g::
+F5::
 clipboard = 
 SendInput {CTRLDOWN}c{CTRLUP}
 ClipWait
